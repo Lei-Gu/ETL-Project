@@ -4,7 +4,7 @@
 #### Team: Arthur Chan, Lei Gu, Cindy Wagner and Jun Yang
 
 ## Description
-For our project, we are
+Checking yelp rating before considering which restaurants people should go to is pretty popular nowadays. We are interested in looking at some data from different sources to see if yelp ratings can have any relationship to food inspection results
 
 ## Extract
 #### 1. Chicago Business Licenses and Owners Dataset
@@ -22,9 +22,10 @@ Data returned as JSON.
 ## Transform
 #### 1. Chicago Business Licenses and Owners Dataset
 - Check for duplicates and missing data
+- Remove non-Illinois addresses
 - Remove columns
 - Rename columns
-- Split data from business-licenses.csv into two tables; one foucses on license, the other on business info.
+- Data from business-licenses.csv are re-formated into licenses and business info tables.
 
 #### 2. Chicago Food Inspection Data
 - Transform Risk field from text (e.g. Risk 3 (Low)) to number (e.g. 3)
@@ -36,11 +37,14 @@ Data returned as JSON.
 - Price level came in as text ($$), transform to number of $ sign
 
 ## Load
-add diagram here
+All data are loaded to PostgresSQL. Data are organized into 5 tables.
+- businessinfo
+- licenses
+- inspections
+- owners
 
-Consolidating different data resources and migrating it to a production data base.
+Database stucture also illustrated with diagram below.
 
+*add diagram here*
 
-
-* **L**oad: the final database, tables/collections, and why this was chosen.
 
