@@ -8,7 +8,7 @@ select * from inspections;
 Select * from licenses;
 Select * from owners;
 Select * from businessinfo;
-
+Select * from yelp;
 
 create table licenses (
 	license_id int primary key,
@@ -37,7 +37,6 @@ create table businessinfo (
 CREATE TABLE inspections (
 id INT PRIMARY KEY,
 license_id Int,
-FOREIGN KEY (license_id) REFERENCES licenses(license_id),
 DBA_name Varchar,
 AKA_name Varchar,
 risk TEXT,
@@ -49,8 +48,7 @@ violations Varchar
 
 
 create table owners (
-	account_number int primary key,
-	FOREIGN KEY (account_number) REFERENCES businessinfo(account_number),
+	account_number int,
 	legal_name Varchar,
 	owner_first_name Varchar,
 	owner_last_name Varchar,
@@ -65,6 +63,5 @@ cust_rating float,
 price_rating float,
 foreign key (license_id) references licenses(license_id)
 );
-
 
 
