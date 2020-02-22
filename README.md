@@ -28,6 +28,7 @@ Data returned as JSON.
 
 #### 2. Chicago Food Inspection Data
 - Transform Risk field from text (e.g. Risk 3 (Low)) to number (e.g. 3)
+- Drop duplicate inspections in the same table
 - Remove address-related columns, related info already in business license dataset
 - Rename columns
 
