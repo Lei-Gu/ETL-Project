@@ -1,8 +1,7 @@
 # ETL Project
 ## Chicago Business - Food Inspection and Yelp Ratings
 
-#### Team: Arthur Chan, Lei Gu, Cindy Wagner and Jun Yang
-#### (Feb 2020)
+#### Team: Arthur Chan, Lei Gu, Cindy Wagner and Jun Yang (Feb 2020)
 
 ## Description
 Checking yelp rating before considering which restaurants people should go to is pretty popular nowadays. We are interested in looking at some data from different sources to see if yelp ratings can have any relationship to food inspection results
