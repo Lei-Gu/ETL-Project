@@ -44,7 +44,6 @@ All data are loaded to PostgresSQL. Data are organized into 5 tables.
 - owners
 
 Database stucture also illustrated with diagram below.
-
-*add diagram here*
+![ImageDiagram](https://github.com/Lei-Gu/ETL-Project/blob/master/DBD/snip.PNG)
 
 
