@@ -65,3 +65,25 @@ foreign key (license_id) references licenses(license_id)
 );
 
 
+----grouping by inspection_id and taking latest inspected date
+SELECT  id, license_id,dba_name, aka_name, risk, max(inspection_date), inspection_type, results, violations
+From inspections
+Group by id;
+-- left join inspections and yelp data tables
+SELECT  inspections.id,inspections.license_id, inspections.dba_name, inspections.aka_name, inspections.risk, 
+        inspections.inspection_type, inspections.results, inspections.violations, 
+        yelp.bus_id, yelp.cust_rating, yelp.price_lvl
+From inspections
+Left join yelp
+on inspections.license_id=yelp.license_id;
+---top 10 yelp rating restaurants with inspection results
+Select
+        inspections.license_id, yelp.cust_rating, yelp.price_lvl, inspections.id,inspections.dba_name, inspections.aka_name, inspections.risk, 
+        inspections.inspection_type, inspections.results, inspections.violations, 
+        yelp.bus_id 
+from inspections
+Left join yelp
+on inspections.license_id=yelp.license_id
+Where yelp.cust_rating is not null 
+Order by yelp.cust_rating desc
+limit 10;
