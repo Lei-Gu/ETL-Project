@@ -49,4 +49,21 @@ Database stucture also illustrated with diagram below.
 - `account_number` is the key linking licenses and business info. Each business has an account number
 ![ImageDiagram](https://github.com/Lei-Gu/ETL-Project/blob/master/DBD/snip-1.PNG)
 
+## Join Tables
+Examples of SQL queries:
+1. Latest inspection by inspection_id
 
+`SELECT  id, license_id,dba_name, aka_name, risk, max(inspection_date), inspection_type, results, violations
+FROM inspections
+GROUP BY id`
+
+2. Top 10 yelp rating restaurants with inspection results
+
+`SELECT i.license_id, y.cust_rating, y.price_lvl, i.id, i.dba_name, i.risk, 
+        i.inspection_type, i.results, i.violations, y.bus_id 
+FROM inspections as i
+JOIN yelp as y
+ON i.license_id=y.license_id
+WHERE y.cust_rating IS NOT NULL 
+ORDER BY y.cust_rating DESC
+LIMIT 10;`
