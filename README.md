@@ -46,7 +46,7 @@ All data are loaded to PostgresSQL. Data are organized into 5 tables.
 
 Database stucture also illustrated with diagram below.
 - `license_id` is the key linking inspections, licenses and yelp table. Each business can have multiple licenses
-- `account_number` is the key linking licenses and business info. Each business has an account number
+- `account_number` links licenses and business info. Each business has an account number
 ![ImageDiagram](https://github.com/Lei-Gu/ETL-Project/blob/master/DBD/snip-1.PNG)
 
 ## Join Tables
